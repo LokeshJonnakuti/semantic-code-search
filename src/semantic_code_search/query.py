@@ -57,7 +57,7 @@ def do_query(args, model):
         sys.exit(0)  # user cancelled
     file_path_with_line = (
         results[selected_idx][1]['file'], results[selected_idx][1]['line'] + 1)
-    if file_path_with_line is not None:
+    if file_path_with_line != None:
         open_in_editor(
             file_path_with_line[0], file_path_with_line[1], args.editor)
         sys.exit(0)
