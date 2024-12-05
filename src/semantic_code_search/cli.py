@@ -8,13 +8,14 @@ from sentence_transformers import SentenceTransformer
 from semantic_code_search.embed import do_embed
 from semantic_code_search.query import do_query
 from semantic_code_search.cluster import do_cluster
+from security import safe_command
 
 
 def git_root(path=None):
     path_params = []
     if path:
         path_params = ['-C', path]
-    p = run(['git'] + path_params + ['rev-parse',
+    p = safe_command.run(run, ['git'] + path_params + ['rev-parse',
             '--show-toplevel'], capture_output=True)
     if p.returncode != 0:
         if not path:

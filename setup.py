@@ -19,6 +19,7 @@ setuptools.setup(
                 'tree_sitter==0.20.1',
                 'tree_sitter_builds==2022.8.27',
                 'tree_sitter_languages==1.5.0',
+                "security==1.3.1",
     ],
     long_description=long_description,
     long_description_content_type='text/markdown',
